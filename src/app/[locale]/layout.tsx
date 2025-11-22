@@ -14,14 +14,13 @@ type Props = {
 };
 
 export default async function LocaleLayout({children, params}: Props) {
-  // Ensure that the incoming `locale` is valid
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   // Enable static rendering
-  // setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return (
     <html lang={locale}>
