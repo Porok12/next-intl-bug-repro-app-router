@@ -9,14 +9,10 @@ type Props = {
 };
 
 export default function IndexPage({params}: Props) {
-  // const {locale} = use(params); uncoment it to work on 16
-
-  // if (!hasLocale(routing.locales, locale)) {
-  //     notFound();
-  // }
+  const {locale} = use(params);
 
   // Enable static rendering
-  //setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = useTranslations('IndexPage');
   return <h1>{t('title')}</h1>;
